@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script src="js/echarts.min.js"></script>
+</head>
+<body>
+  <div id="main" style="width:600px;height:500px;background-color: #eee;"></div>
+  <script>
+    var main = document.getElementById("main");
+    var myChart = echarts.init(main);
+    //发送请求 获取返回数据
+    $.ajax({
+      url:"http://127.0.0.3000/salesmonth",
+      success:function(result){
+        console.log(result);
+        var rows = [];
+        for(var item of result){
+
+        } 
+        var option = {
+          title:{text:"药品销售统计图"},
+          series:[{
+            type:"pie",
+            radius:'50%',
+            center:["30%","60%"],
+            data:rows,
+            color:["#aaa","#aab","#aac","#aae","#aaf","#bbb","#bbc","#bba","#ccc","#cca","#ccb","#cce"]
+          }]
+          //color 全局样式列表，覆盖操作
+      };
+      myChart.setOption(option);
+      }   
+    })   
+  </script>
+</body>
+</html>

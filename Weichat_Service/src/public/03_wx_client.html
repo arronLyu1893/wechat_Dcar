@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <h3>03_ws_client.html</h3>
+    <h3>webSocket客户端程序</h3>
+    <button id="btn1">使用ws连接服务器</button>
+    <button id="btn2">向服务器发送数据</button>
+    <button id="btn3">关闭ws连接</button>
+    <script>
+      //1:获取所有按钮
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var btn3 = document.getElementById("btn3");
+      //2:为按钮绑定事件
+      var socket = null;
+      //3:第一个按钮连接服务器并且接数据
+      btn1.onclick = function(){
+      socket = new WebSocket("ws://127.0.0.1:9001");
+      socket.onmessage = function(e){
+        console.log(e.data);
+      }
+      }
+      //4:第二个按钮发送数据
+      btn2.onclick = function(){
+        socket.send("我是client"+new Date().toString());
+      }
+      //5:第三个按钮关闭连接
+      btn3.onclick = function(){
+        socket.close();
+      }
+    </script>
+</body>
+</html>
