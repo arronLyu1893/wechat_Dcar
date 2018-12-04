@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "FFD665",
+    "navigationBarTitleText": "30懂车",
+    "navigationBarTextStyle": "black"
+  }
+}

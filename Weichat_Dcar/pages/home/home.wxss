@@ -1,0 +1,6 @@
+/* pages/home/home.wxss */
+/*功能一.轮播图*/
+.slider,.slider swiper,.slider image{
+  width:100%;
+  height: 370rpx;
+}
